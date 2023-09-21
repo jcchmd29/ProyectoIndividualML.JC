@@ -5,32 +5,31 @@ import pandas as pd
 # cargar Df para las funciones
 
 # funcion 1
-df_games_reviews = pd.read_csv('./myenv/dataset/df_games_reviewsf1.csv')
+df_games_reviews = pd.read_csv('../ProyectoIndividualML.JC/df_games_reviewsf1.csv')
 
 # funcion 2
-def_reviews_api2 = pd.read_csv('./myenv/dataset/def_reviews_api2.csv')
+def_reviews_api2 = pd.read_csv('../ProyectoIndividualML.JC/def_reviews_api2.csv')
 
 # funcion 3
-df3 = pd.read_csv('./myenv/dataset/resultados_num.csv')
+df3 = pd.read_csv('../ProyectoIndividualML.JC/resultados_num.csv')
 
 # funcion 4
-df4 = pd.read_csv('./myenv/dataset/df_final_api3y4.csv')
+df4 = pd.read_csv('../ProyectoIndividualML.JC/df_final_api3y4.csv')
 
 # funcion 5
-df_gamesf5_free = pd.read_csv('./myenv/dataset/df_gamesf5_free.csv')
+df_gamesf5_free = pd.read_csv('../ProyectoIndividualML.JC/df_gamesf5_free.csv')
 
 
 app = FastAPI()
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World juan "}
-
+    return {"Bienvenidos A mi primera API"}
 
 
 @app.get('/userdata/{user_id}')
 def userdata(User_id: str):
- # Filtrar los datos para el usuario específico
+# Filtrar los datos para el usuario específico
     datos_usuario = df_games_reviews[df_games_reviews['user_id'] == User_id]
     
     # Calcular la cantidad de dinero gastado por el usuario
@@ -68,7 +67,7 @@ def countreviews(fecha_inicio: str, fecha_fin:str):
     # Calcular la cantidad de items
     cantidad_items = len(df_filtrado)
 
-     # Devolver los resultados como un diccionario
+    # Devolver los resultados como un diccionario
     resultados = {
         f'Cantidad de usuarios que realizaron reviews entre {fecha_inicio} y {fecha_fin}': usuarios_unicos,
         'Porcentaje de recomendación promedio': porcentaje_promedio,
@@ -94,9 +93,9 @@ def genre(genero:str):
 
     # Crear un diccionario con la respuesta
     response = {
-       
+    
         'Genero': genero,
-         "position de ranking": position
+        "position de ranking": position
     }
 
     return response
@@ -144,17 +143,6 @@ def developer( desarrollador : str ):
     result_dict = conteo_free_por_anio.to_dict(orient='records')
     
     return result_dict
-
-
-
-
-
-
-
-
-
-
-
 
 
 
