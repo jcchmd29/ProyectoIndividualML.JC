@@ -16,8 +16,6 @@ Luego de visualizar los datos en los 3 archivos dados (cabe resaltar que fueron 
 
 Todo esto se realizo con Python y mayormente con la libreria Pandas.
 
-Imagen
-[EDA](https://www.analyticssteps.com/backend/media/thumbnail/7250186/25235_1593777879_Untitled-2.jpg)
 
 ### A continuacion detallo cada funcion y la estructura de datos que se usaron para su armado.
 
