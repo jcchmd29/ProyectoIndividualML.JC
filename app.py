@@ -4,6 +4,7 @@ import uvicorn
 import pandas as pd
 from textblob import TextBlob
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
 from sklearn.metrics.pairwise import cosine_similarity
@@ -162,6 +163,7 @@ def developer( desarrollador : str ):
 
 @app.get('/Modelo/{item_id}')
 def get_item_recommendations(item_id_referencia):
+    
     # Calcular la similitud de coseno entre el ítem de referencia y todos los demás ítems
     similarities = item_similarity_df[item_id_referencia]
     
