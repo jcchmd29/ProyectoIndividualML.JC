@@ -161,7 +161,7 @@ def developer( desarrollador : str ):
     return result_dict
 
 @app.get('/Modelo/{item_id}')
-def get_item_recommendations(item_id_referencia, item_similarity_df, num_recommendations=5):
+def get_item_recommendations(item_id_referencia):
     # Calcular la similitud de coseno entre el ítem de referencia y todos los demás ítems
     similarities = item_similarity_df[item_id_referencia]
     
