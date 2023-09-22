@@ -1,6 +1,8 @@
 from fastapi import FastAPI
+from fastapi.responses import RedirectResponse
 import uvicorn
 import pandas as pd
+from textblob import TextBlob
 
 # cargar Df para las funciones
 
@@ -20,7 +22,12 @@ df4 = pd.read_csv('../ProyectoIndividualML.JC/df_final_api3y4.csv')
 df_gamesf5_free = pd.read_csv('../ProyectoIndividualML.JC/df_gamesf5_free.csv')
 
 
-app = FastAPI()
+app = FastAPI(title="Bienvenidos A mi primera API")
+
+
+@app.get("/", include_in_schema=False)
+def index():
+    return RedirectResponse("/docs", status_code=308)
 
 @app.get("/")
 def read_root():
