@@ -3,6 +3,10 @@ from fastapi.responses import RedirectResponse
 import uvicorn
 import pandas as pd
 from textblob import TextBlob
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.decomposition import PCA
+from sklearn.metrics.pairwise import cosine_similarity
 
 # cargar Df para las funciones
 
@@ -20,6 +24,11 @@ df4 = pd.read_csv('df_final_api3y4.csv')
 
 # funcion 5
 df_gamesf5_free = pd.read_csv('df_gamesf5_free.csv')
+
+#ML
+
+item_similarity_df = pd.read_csv('df_ML.csv')
+
 
 
 app = FastAPI(title="Bienvenidos A mi primera API")
@@ -151,6 +160,20 @@ def developer( desarrollador : str ):
     
     return result_dict
 
-
-
+@app.get('/Modelo/{item_id}')
+def get_item_recommendations(item_id_referencia, item_similarity_df, num_recommendations=5):
+    # Calcular la similitud de coseno entre el ítem de referencia y todos los demás ítems
+    similarities = item_similarity_df[item_id_referencia]
+    
+    # Ordenar los ítems en función de su similitud de coseno (en orden descendente)
+    recomendaciones = similarities.sort_values(ascending=False)
+    
+    # Eliminar el ítem de referencia de la lista de recomendaciones (si está presente)
+    if item_id_referencia in recomendaciones:
+        recomendaciones = recomendaciones.drop(item_id_referencia)
+    
+    # Tomar los primeros "num_recommendations" ítems como recomendaciones
+    top_recommendations = recomendaciones.head(num_recommendations)
+    
+    return top_recommendations
 
