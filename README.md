@@ -6,18 +6,20 @@ A continuación, se detallan los pasos y requerimientos para llevar a cabo este 
 
 ## Transformaciones de Datos y Análisis Exploratorio de los Datos (EDA)
 
-En esta fase inicial del proyecto, se debe realizar un análisis exploratorio de los datos para investigar las relaciones entre las variables del conjunto de datos no se requiere realizar transformaciones de datos. Sin embargo, se debe garantizar que el conjunto de datos se lea con el formato correcto y se pueden eliminar columnas innecesarias o solo trabajar con aquellas columnas que nos permitan optimizar el rendimiento de la API y el entrenamiento del modelo. Esto ultimo fue lo que se decidio realizar.
+En esta fase inicial del proyecto, se debe realizar un análisis exploratorio de los datos para investigar las relaciones entre las variables del conjunto de datos y si se requiere realizar transformaciones de datos. Sin embargo, se debe garantizar que el conjunto de datos se lea con el formato correcto y se pueden eliminar columnas innecesarias o solo trabajar con aquellas columnas que nos permitan optimizar el rendimiento de la API y el entrenamiento del modelo. **Esto ultimo fue lo que se decidio realizar**.
 
-Luego de visualizar los datos en los 3 archivos dados (cabe resaltar que fueron de tipo JSON y puede ser encontrados en el siguiente enlace https://drive.google.com/drive/folders/11-QXtPVj0q3Uds45IOByNn7jreSHuBtg?usp=drive_link ), se procedio a crear DF independiente a partir de las columnas que nos interesaban en cada uno de ellos para realizar las funciones solicitadas.
+Luego de visualizar los datos en los 3 archivos dados (cabe resaltar que fueron de tipo **JSON** y pueden ser encontrados en el siguiente enlace https://drive.google.com/drive/folders/11-QXtPVj0q3Uds45IOByNn7jreSHuBtg?usp=drive_link ), se procedio a crear DF independiente a partir de las columnas que nos interesaban en cada uno de ellos para realizar las funciones solicitadas y guarados commo archivos **CSV** que hacen mas facil su manipulacion y de menos espacio en memeoria.
 
-A continuacion detallo cada funcion y la estructura de datos que se usaron para su armado.
+### A continuacion detallo cada funcion y la estructura de datos que se usaron para su armado.
 
 
 userdata(User_id: str): Devuelve la cantidad de dinero gastado por el usuario, el porcentaje de recomendación en base a las reseñas y la cantidad de items.
-Para esta funcion utilizamos el archivo de items extrajimos datos de columnas anidadas las cuales desanidamos y dimos el formato necesario hazta crear un DF limpio de este. Tambien usamos parte del archivo games de la columna reviews que se encontraba anidada y luego de desanidar y transformar en columnas esos datos, utilizamos una columna llamada price para obtener el costo de los gastos la cual concatenemos al DF de items previamente obtenido
+
+Para esta funcion utilizamos el archivo de items ali extrajimos datos de columnas anidadas las cuales desanidamos y le dimos el formato necesario hazta crear un DF limpio de este. Tambien usamos parte del archivo games, de la columna reviews que se encontraba anidada y luego de desanidar se procedio a  transformar esos datos en columnas separadas, utilizamos una de esas columnas independiente llamada price para obtener el costo de los gastos la cual concatenemos al DF de items limpio previamente obtenido.
 
 countreviews(YYYY-MM-DD y YYYY-MM-DD: str): Devuelve la cantidad de usuarios que realizaron reseñas entre las fechas proporcionadas y el porcentaje de recomendación basado en las reseñas.
-Para esta funcion utilizamos el archivo de items extrajimos datos de columnas anidadas las cuales desanidamos y dimos el formato necesario hazta crear un DF limpio de este
+
+Para esta funcion utilizamos el archivo de items de la columa de su mismo nombre que previamente desanidamos y que obtenimos columnas independientes alli encontramos una columna llan¡mada posted. En dicha columna se encontraban los datos con las fechas que debiamos utilizar para esta funcion la cual debios dar formato solicitado. para ello eliminamos parte del valor inicial del dato como era la palabra *posted*, luego separamos cada parte de la fecha en columnas diferentes para poder aplicar algunas mejoras como llevar el valor de los meses de letras a numeros, los dias en formato de dos numeros y alli nos percatamos que le año tenia valores faltantes que procedimos a rellenar con la moda obrtenida del conjunto de datos existentes para el año. Tambien de las columnas independientes utilizamos la columna recommend la cual llevamos de valores booleanos a numericos donde True es 1 y False es 0.
 
 
 genre(género: str): Devuelve la posición en la que se encuentra un género en el ranking de géneros, analizado bajo la columna 'PlayTimeForever'.
