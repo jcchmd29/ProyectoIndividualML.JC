@@ -27,7 +27,7 @@ app = FastAPI(title="Bienvenidos A mi primera API")
 
 @app.get("/", include_in_schema=False)
 def index():
-    return RedirectResponse("/docs", status_code=308)
+    return RedirectResponse("/docs#/", status_code=308)
 
 @app.get("/")
 def read_root():
