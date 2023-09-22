@@ -24,7 +24,14 @@ Para esta funcion utilizamos el archivo de items de la columa de su mismo nombre
 
 genre(género: str): Devuelve la posición en la que se encuentra un género en el ranking de géneros, analizado bajo la columna 'PlayTimeForever'.
 
+Aca utilizamos Df del archivos items y Df del archivos games, que luefo fueron unidos con un *inner join* por la columna user_id que ambos compartian  para obtener los datos de genero de juego.
+El DF que se construyo del archivo items fue obtenido del DF desanidado previamente de la columna items, una columna inpedendiente llamada *playtime_forever* la cual fue llevada a tipo *int* y con la cula se obtuvo una columna adiconal *playtime_hours* con valores llevados a horas apartir de los valores de esta primera.
+El DF que se creo con el archivo games se realizo con  los datos de las columnas independientes 
+
+
 userforgenre(género: str): Devuelve el top 5 de usuarios con más horas de juego en el género especificado, junto con su URL y user_id.
+Utilizamos el archivo games para crear un DF con los valores y columnas requeridas para esta funcion. El Df resultante lo armamos con las columnas app_name, user_id
+
 
 developer(desarrollador: str): Devuelve la cantidad de items y el porcentaje de contenido gratuito por año para la empresa desarrolladora especificada.
 
