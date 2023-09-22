@@ -77,6 +77,6 @@ git clone https://github.com/jcchmd29/ProyectoIndividualML.JC
 La API estará disponible en http://127.0.0.1:8000/docs#.
 
 
-¡Gracias por ser parte de este emocionante proyecto! Si tiene alguna pregunta o necesita ayuda, no dude en ponerse en contacto con nosotros. ¡Esperamos ver sus contribuciones y resultados
+¡Gracias por ser parte de este emocionante proyecto! Si tiene alguna pregunta o necesita ayuda, no dude en ponerse en contacto.
 
 
