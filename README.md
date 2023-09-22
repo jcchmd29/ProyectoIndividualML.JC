@@ -48,8 +48,8 @@ Aca utilizamos los datos del archivo games especificamente las columnas *'releas
 
 
 ## Deployment
-El proyecto se puedo implementar en un servicio de alojamiento web. Escogimos Railway para consumir la API desde la web.
-proyectoindividualmljc-production.up.railway.app
+El proyecto se puedo implementar en un servicio de alojamiento web. Escogimos **Railway** para consumir la API desde la web.
+ enlace: proyectoindividualmljc-production.up.railway.app
 
 
 ## Desarrollo de la API
