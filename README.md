@@ -47,29 +47,29 @@ Para esta funcion utilizamos el DF realizado en la funcion anterior ya que conte
 Aca utilizamos los datos del archivo games especificamente las columnas *'release_date','developer','price','items_count'* con las culaes se armo un nuevo DF el cual procedimos a limpar, los valores vacios se rellenaron con un randon de los valores encontrados para hacer el modelo mas eficiente, la columna de *items_count* se llevo a tipo inter y la columna *price* solo dejamos los valores que contenian la palabra *Free*. Luego procedimos a tomar una muestra mas chica de todo los datos originales. en la columna de *'release_date'* eliminas datos no concurrentes al tipo deseado.
 
 
-Deployment
+## Deployment
 El proyecto se puedo implementar en un servicio de alojamiento web. Escogimos Railway para consumir la API desde la web.
 proyectoindividualmljc-production.up.railway.app
 
 
-Desarrollo de la API
+## Desarrollo de la API
 
 Se debe implementar una API utilizando el framework FastAPI para exponer los datos y funcionalidades del proyecto. A continuación, se describen las funciones que deben implementarse como endpoints se utilizaran las funciones creadas anteriormente
 
 
-Modelo de Aprendizaje Automático
+## Modelo de Aprendizaje Automático
 
-El modelo que tomamos para ejecutar fue:
+El modelo para ejecutar fue:
 
 Sistema de Recomendación ítem-ítem
 recomendacion_juego(id de producto): Recibe el ID de un juego y devuelve una lista con 5 juegos recomendados similares al ingresado.
 
 
-Video de Presentación
+## Video de Presentación
 enlance : 
 
-Cómo Ejecutar el Proyecto
-Clone este repositorio en su máquina local.
+
+**Clone este repositorio en su máquina local.**
 
 git clone https://github.com/jcchmd29/ProyectoIndividualML.JC
 
