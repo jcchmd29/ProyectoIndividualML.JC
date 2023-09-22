@@ -7,19 +7,19 @@ from textblob import TextBlob
 # cargar Df para las funciones
 
 # funcion 1
-df_games_reviews = pd.read_csv('../df_games_reviewsf1.csv')
+df_games_reviews = pd.read_csv('../ProyectoIndividualML.JC/df_games_reviewsf1.csv')
 
 # funcion 2
-def_reviews_api2 = pd.read_csv('../def_reviews_api2.csv')
+def_reviews_api2 = pd.read_csv('../ProyectoIndividualML.JC/def_reviews_api2.csv')
 
 # funcion 3
-df3 = pd.read_csv('../resultados_num.csv')
+df3 = pd.read_csv('../ProyectoIndividualML.JC/resultados_num.csv')
 
 # funcion 4
-df4 = pd.read_csv('../df_final_api3y4.csv')
+df4 = pd.read_csv('../ProyectoIndividualML.JC/df_final_api3y4.csv')
 
 # funcion 5
-df_gamesf5_free = pd.read_csv('../df_gamesf5_free.csv')
+df_gamesf5_free = pd.read_csv('../ProyectoIndividualML.JC/df_gamesf5_free.csv')
 
 
 app = FastAPI(title="Bienvenidos A mi primera API")
